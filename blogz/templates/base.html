@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+<body>
+    
+    <a href="/">home</a>
+    <a href="/blog">all posts</a>
+    <a href="/newpost">new post</a>
+    <a href="/login">login</a>
+    <a href="/logout">logout</a>
+    
+
+        
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       <ul>
+          {% for message in messages %}
+          <h2>{{ message }}</h2>
+          {% endfor %}
+       </ul>
+    {% endif %}
+ {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

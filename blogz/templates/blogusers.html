@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Welcome to The Blog!</h1>
+    
+    <hr />
+
+    {% if writers|length == 0 %}
+    <p>No writers yet</p>
+    {% else %}
+
+    <hr />
+    <h2>Blog writers</h2>
+    <br>
+    <ul>
+    {% for writer in writers %}
+        
+        <li>    <a href="/authorposts?writer_id_req={{writer.writer_id}}">{{writer.username}}</a> </li>
+        
+        {% endfor %}
+    </ul>    
+        <hr>
+    
+    {% endif %}
+
+    
+    
+
+    
+{% endblock %}

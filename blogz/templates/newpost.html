@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>You are currently logged in as: {{current_author}}</h3>
+
+<h1> {{blank_input}}</h1>
+    <h1>Write your Blog Post below:</h1>    
+                <form method="POST" action="/newpost" style="display:inline-block">
+                    New Post Title:
+                    <input type="text" name='blog_post_title'/>
+                    <br>
+                    New Post Text:
+                    <input type="text" name='blog_post_text'/>
+                </label>
+                <input type="submit" value='Add Blog Post' />
+                </form>
+    
+    
+    
+    
+{% endblock %}

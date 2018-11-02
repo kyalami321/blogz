@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<p>Posts written by {{author_name}}</p>
+
+{% if posts|length == 0 %}
+    <p>No posts by this user yet</p>
+    {% else %}
+    
+       
+
+{% for post in posts %}
+
+
+
+<div style="background-color:oldlace">
+    <h3><a href ="/display_post?post_id_req={{post.post_id}}">{{post.post_title}}</a></h3>
+    <br>
+</div>
+<div style="background-color:oldlace">
+<p>{{post.post_text}}</p>
+</div>
+<hr>
+
+{% endfor %}   
+{% endif %}
+
+{% endblock %}

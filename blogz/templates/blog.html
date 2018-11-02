@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Welcome to The Blog!</h1>
+
+{{noposts}}
+    
+    <hr />
+
+    {% if posts|length == 0 %}
+    <p>No posts yet</p>
+    {% else %}
+
+    <hr />
+    <h2>All blog posts</h2>
+    <br>
+        {% for post in posts %}
+        <div style="background-color:oldlace">
+            <h3><a href ="/display_post?post_id_req={{post.post_id}}">{{post.post_title}}</a></h3>
+            <br>
+            
+        </div>
+        <div style="background-color:oldlace">
+        <p>{{post.post_text}}</p>
+        </div>
+        
+        Written by <a href="/authorposts?writer_id_req={{post.writer_id}}">{{post.writer.username}}</a>
+        
+        {% endfor %}
+        <hr>
+        
+        
+        </div>
+        <hr>
+    </div>
+    {% endif %}
+
+    
+    
+
+    
+{% endblock %}
